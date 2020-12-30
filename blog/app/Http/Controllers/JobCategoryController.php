@@ -14,7 +14,8 @@ class JobCategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.categories.index');
+        $jobcategories = jobcategory::all();
+        return view('backend.categories.index',compact('jobcategories'));
     }
 
     /**
@@ -24,7 +25,7 @@ class JobCategoryController extends Controller
      */
     public function create()
     {
-        //
+       return view('backend.categories.create');
     }
 
     /**
