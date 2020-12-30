@@ -138,11 +138,18 @@
 
             <!-- Nav Item - Job Category -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link {{ Request::is('jobcategory*') ? 'active' : '' }}" href="{{route('jobcategory.index')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Job Category</span></a>
             </li>
-            
+
+             <!-- Nav Item - Job Subcategory -->
+             <li class="nav-item">
+                <a class="nav-link {{ Request::is('jobsubcategory*') ? 'active' : '' }}" href="{{route('jobsubcategory.index')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Job Subcategory</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

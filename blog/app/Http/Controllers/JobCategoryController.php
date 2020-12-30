@@ -37,6 +37,35 @@ class JobCategoryController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request);
+
+        //validation
+        $request->validate([
+            'name' => 'required|min:5',
+            'logo' => 'required|mimes:jpeg,jpg,png'
+        ]);
+
+        // upload
+        if($request->file()) {
+            // 624872374523_a.jpg
+            $fileName = time().'_'.$request->logo->getClientOriginalName();
+
+            // categoryimg/624872374523_a.jpg
+            $filePath = $request->file('logo')->storeAs('jobcategoryimg', $fileName, 'public');
+
+             $path = '/storage/'.$filePath;
+        }
+
+
+        // store data
+        $jobcategory = new jobcategory;
+        $jobcategory->name = $request->name;
+        $jobcategory->logo = $path;
+        $jobcategory->save();
+
+        //redirect
+        return redirect()->route('jobcategory.index');
+
     }
 
     /**
@@ -59,6 +88,8 @@ class JobCategoryController extends Controller
     public function edit(jobcategory $jobcategory)
     {
         //
+        //$jobcategory = jobcategory::find($jobcategory);
+        return view('backend.categories.edit',compact('jobcategory'));
     }
 
     /**
@@ -71,6 +102,39 @@ class JobCategoryController extends Controller
     public function update(Request $request, jobcategory $jobcategory)
     {
         //
+        $request->validate([
+            'name' => 'required|min:5',
+            'logo' => 'sometimes|mimes:jpeg,jpg,png'
+        ]);
+
+        // upload
+        if($request->file()) {
+            // 624872374523_a.jpg
+            $fileName = time().'_'.$request->logo->getClientOriginalName();
+
+            // categoryimg/624872374523_a.jpg
+            $filePath = $request->file('logo')->storeAs('jobcategoryimg', $fileName, 'public');
+
+            $path = '/storage/'.$filePath;
+
+            // delete old image
+
+
+            // $category->logo = $path;
+
+        }
+        else {
+           $path=$request->oldlogo;
+        }
+
+        //$jobcategory=jobcategory::find($id);
+        // update data
+        $jobcategory->name = $request->name;
+        $jobcategory->logo= $path;
+        $jobcategory->save();
+
+        // redirect
+        return redirect()->route('jobcategory.index');
     }
 
     /**
@@ -82,5 +146,12 @@ class JobCategoryController extends Controller
     public function destroy(jobcategory $jobcategory)
     {
         //
+        //$jobcategory=jobcategory::find($id);
+        $jobcategory->delete();
+        // delete old image
+
+        // redirect
+        return redirect()->route('jobcategory.index');
     }
 }
+

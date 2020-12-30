@@ -17,8 +17,8 @@
       <div class="col-md-12">
         <div class="tile">
           <div class="tile-body">
-            <h4>JobCategory Create Form</h4>
-            <form method="post" action="{{route('jobcategory.store')}}" enctype="multipart/form-data" class="mt-3">
+            <h4>Jobsubcategory Create Form</h4>
+            <form method="post" action="{{route('jobsubcategory.store')}}" enctype="multipart/form-data" class="mt-3">
               @csrf
               <div class="form-group">
                 <label for="nameInput">Name:</label>
@@ -28,11 +28,12 @@
                 @enderror
               </div>
               <div class="form-group">
-                <label for="fileInput">Logo:</label>
-                <input type="file" name="logo" class="form-control-file @error('logo') is-invalid @enderror" id="fileInput">
-                @error('logo')
-                  <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                <label for="fileInput">JobCategory:</label>
+                <select class="form-control" name="jobcategory">
+                  @foreach($jobcategories as $jobcategory)
+                  <option value="{{$jobcategory->id}}">{{$jobcategory->name}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <input type="submit" name="btn-submit" value="Save" class="btn btn-primary">

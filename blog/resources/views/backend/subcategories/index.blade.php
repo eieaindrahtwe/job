@@ -18,7 +18,7 @@
         <div class="tile">
           <div class="tile-body">
             <h4 class="d-inline-block">Categories List</h4>
-            <a href="{{route('jobcategory.create')}}" class="btn btn-success float-right">Add New</a>
+            <a href="{{route('jobsubcategory.create')}}" class="btn btn-success float-right">Add New</a>
 
             <div class="table-responsive mt-3">
               <table class="table table-bordered" id="sampleTable">
@@ -26,20 +26,20 @@
                   <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Logo</th>
+                    <th>Job_Category Name</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   @php $i=1; @endphp
-                  @foreach($jobcategories as $jobcategory)
+                  @foreach($jobsubcategories as $jobsubcategory)
                   <tr>
                     <td> {{$i++}} </td>
-                    <td> {{$jobcategory->name}}</td>
-                    <td> <img src="{{asset($jobcategory->logo)}}" width="100"> </td>
+                    <td> {{$jobsubcategory->name}}</td>
+                    <td> {{$jobsubcategory->jobcategory->name}} </td>
                     <td>
-                      <a href="{{route('jobcategory.edit',$jobcategory->id)}}" class="btn btn-warning btn-sm">Edit</a>
-                      <form method="post" action="{{route('jobcategory.destroy',$jobcategory->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+                      <a href="{{route('jobsubcategory.edit',$jobsubcategory->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                      <form method="post" action="{{route('jobsubcategory.destroy',$jobsubcategory->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                         @csrf
                         @method('DELETE')
                         <input type="submit" name="btnsubmit" class="btn btn-danger btn-sm" value="Delete">
