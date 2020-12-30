@@ -19,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontendController@index')->name('homepage');
 
+
+
+
+
+
+//backend
+ 
 Route::get('dashboard', 'BackendController@dashboard')->name('dashboardpage');
 
 Route::get('jobcategory', 'BackendController@jobcategory')->name('jobcategorypage');
