@@ -26,17 +26,17 @@
                   <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Photo</th>
+                    <th>Logto</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {{-- @php $i=1; @endphp
-                  @foreach($categories as $category) --}}
+                  @php $i=1; @endphp
+                  @foreach($jobcategories as $jobcategory)
                   <tr>
-                    <td>{{-- {{$i++}} --}}</td>
-                    <td>{{-- {{$category->name}} --}}</td>
-                    <td>{{-- <img src="{{asset($category->photo)}}" width="100"> --}}</td>
+                    <td> {{$i++}} </td>
+                    <td> {{$jobcategory->name}}</td>
+                    <td> <img src="{{asset($jobcategory->photo)}}" width="100"> </td>
                     <td>
                       <a href="{{-- {{route('categories.edit',$category->id)}} --}}" class="btn btn-warning btn-sm">Edit</a>
                       <form method="post" action="{{-- {{route('categories.destroy',$category->id)}} --}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
@@ -46,14 +46,14 @@
                       </form>
                     </td>
                   </tr>
-                  @endforeach
+                @endforeach
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-      </div>   
-    </div>   
+      </div>
+    </div>
   </main>
 @endsection
 
