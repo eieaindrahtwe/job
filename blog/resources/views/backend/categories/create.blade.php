@@ -1,7 +1,6 @@
-@extends('Backmaster')
+@extends('backend_master')
 
 @section('content')
-
   <main class="app-content">
     <div class="app-title">
       <div>
@@ -13,52 +12,39 @@
         <li class="breadcrumb-item"><a href="#">JobCategories</a></li>
       </ul>
     </div>
+
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
           <div class="tile-body">
-            <h4 class="d-inline-block">Categories List</h4>
-            <a href="{{-- {{route('categories.create')}} --}}" class="btn btn-success float-right">Add New</a>
-
-            <div class="table-responsive mt-3">
-              <table class="table table-bordered" id="sampleTable">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Photo</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {{-- @php $i=1; @endphp
-                  @foreach($categories as $category) --}}
-                  <tr>
-                    <td>{{-- {{$i++}} --}}</td>
-                    <td>{{-- {{$category->name}} --}}</td>
-                    <td>{{-- <img src="{{asset($category->photo)}}" width="100"> --}}</td>
-                    <td>
-                      <a href="{{-- {{route('categories.edit',$category->id)}} --}}" class="btn btn-warning btn-sm">Edit</a>
-                      <form method="post" action="{{-- {{route('categories.destroy',$category->id)}} --}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
-                        {{-- @csrf
-                        @method('DELETE') --}}
-                        <input type="submit" name="btnsubmit" class="btn btn-danger btn-sm" value="Delete">
-                      </form>
-                    </td>
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
-            </div>
+            <h4>JobCategory Create Form</h4>
+            <form method="post" action="{{-- {{route('jobcategories.store')}} --}}" enctype="multipart/form-data" class="mt-3">
+              @csrf
+              <div class="form-group">
+                <label for="nameInput">Name:</label>
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="nameInput" value="{{old('name')}}">
+                @error('name')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group">
+                <label for="fileInput">Photo:</label>
+                <input type="file" name="photo" class="form-control-file @error('photo') is-invalid @enderror" id="fileInput">
+                @error('photo')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group">
+                <input type="submit" name="btn-submit" value="Save" class="btn btn-primary">
+              </div>
+            </form>
           </div>
         </div>
       </div>   
-    </div>   
+    </div>    
   </main>
 @endsection
 
 @section('script')
-  <script type="text/javascript" src="{{asset('backend_assets/js/plugins/jquery.dataTables.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('backend_assets/js/plugins/dataTables.bootstrap.min.js')}}"></script>
-  <script type="text/javascript">$('#sampleTable').DataTable();</script>
+  
 @endsection

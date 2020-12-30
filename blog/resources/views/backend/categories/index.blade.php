@@ -18,7 +18,7 @@
         <div class="tile">
           <div class="tile-body">
             <h4 class="d-inline-block">Categories List</h4>
-            <a href="{{-- {{route('categories.create')}} --}}" class="btn btn-success float-right">Add New</a>
+            <a href="{{route('jobcategories.create')}}" class="btn btn-success float-right">Add New</a>
 
             <div class="table-responsive mt-3">
               <table class="table table-bordered" id="sampleTable">
