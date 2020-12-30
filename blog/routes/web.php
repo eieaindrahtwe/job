@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'FirstController@index')->name('homepage');
+Route::get('/', 'FrontendController@index')->name('homepage');
+
+Route::get('dashboard', 'BackendController@dashboard')->name('dashboardpage');
+
+Route::get('jobcategory', 'BackendController@jobcategory')->name('jobcategorypage');

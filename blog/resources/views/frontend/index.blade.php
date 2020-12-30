@@ -1,4 +1,4 @@
-@extends('master')
+@extends('Frontmaster')
 @section('content')
 
     <!-- Page Content -->
