@@ -29,3 +29,4 @@ Route::get('/', 'FrontendController@index')->name('homepage');
 Route::get('dashboard', 'BackendController@dashboard')->name('dashboardpage');
 
 // Route::resource('jobcategory', 'JobCategoryController');
+
