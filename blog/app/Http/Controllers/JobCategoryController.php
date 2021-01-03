@@ -130,7 +130,7 @@ class JobCategoryController extends Controller
         //$jobcategory=jobcategory::find($id);
         // update data
         $jobcategory->name = $request->name;
-        $jobcategory->logo= $path;
+        $jobcategory->logo = $path;
         $jobcategory->save();
 
         // redirect
