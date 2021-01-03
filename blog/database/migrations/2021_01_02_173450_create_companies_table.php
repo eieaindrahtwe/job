@@ -16,6 +16,9 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->text('company_logo');
+            $table->unsignedBigInteger('jobpost_id');
+            $table->foreign('jobpost_id')->references('id')->on('jobpost')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

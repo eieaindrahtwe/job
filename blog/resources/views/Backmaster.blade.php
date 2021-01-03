@@ -150,6 +150,13 @@
                     <span>Job Subcategory</span></a>
             </li>
 
+            <!-- Nav Item - Job Post -->
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('jobpost*') ? 'active' : '' }}" href="{{route('jobpost.index')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Job Post</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

@@ -19,97 +19,25 @@
 
       <section class="site-section" id="next-section">
         <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_1.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_1.jpg">
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_2.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_2.jpg">
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_3.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_3.jpg">
-              </a>
-            </div>
+            <div class="row">
+              {{-- <div class="col-lg-8 col-md-10 mx-auto"> --}}
+                @foreach($items as $item)
+                <div class="col-md-3">
+                  <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$item->name}}</h5>
+                      <p class="card-text">{{$item->description}}</p>
 
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_4.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_4.jpg">
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_5.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_5.jpg">
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_6.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_6.jpg">
-              </a>
-            </div>
+                      <p class="card-text">{{$item->brand->name}}</p>
+                      <p class="card-text">{{$item->subcategory->name}}</p>
 
-            <div class="col-md-6 col-lg-6 item">
-              <a href="images/sq_img_11.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_11.jpg">
-              </a>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                @endforeach
             </div>
-            <div class="col-md-6 col-lg-6 item">
-              <a href="images/sq_img_2.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_2.jpg">
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_7.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_7.jpg">
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_8.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_8.jpg">
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_9.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_9.jpg">
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_10.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_10.jpg">
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_11.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_11.jpg">
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4 item">
-              <a href="images/sq_img_12.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
-                <span class="icon-search2"></span>
-                <img class="img-fluid" src="images/sq_img_12.jpg">
-              </a>
-            </div>
-
-          </div>
         </div>
       </section>
 
