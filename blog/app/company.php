@@ -8,6 +8,6 @@ class company extends Model
 {
     //
     protected $fillable = [
-        'company_logo' , 'company_name',
+        'company_logo',
     ];
 }
