@@ -32,3 +32,5 @@ Route::resource('jobcategory', 'JobCategoryController');
 
 Route::resource('jobsubcategory', 'JobsubcategoryController');
 
+//Route::resource('company', 'CompanyController');
+
