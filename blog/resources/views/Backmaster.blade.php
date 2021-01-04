@@ -444,7 +444,8 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('backend_assets/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('backend_assets/js/demo/chart-pie-demo.js')}}"></script>
-
+    <!-- Data table plugin-->
+    @yield('script')
 </body>
 
 </html>
