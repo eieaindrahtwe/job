@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Company;
+use App\company;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -15,7 +15,8 @@ class CompanyController extends Controller
     public function index()
     {
         //
-        return view('backend.categories.index',compact('jobcategories'));
+         $companies=company::orderBy('id','desc')->get();
+        return view('backend.company.index',compact('companies'));
     }
 
     /**

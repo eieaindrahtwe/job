@@ -30,7 +30,6 @@ class JobsubcategoryController extends Controller
     {
         //
         $jobcategories = jobcategory::all();
-
         return view('backend.subcategories.create',compact('jobcategories'));
 
     }

@@ -15,8 +15,8 @@ class JobpostController extends Controller
     public function index()
     {
         //
-        //$jobpost = jobpost::all();
-        return view('backend.jobpost.index');
+        $jobpost=jobpost::orderBy('id','desc')->get();
+        return view('backend.jobpost.index',compact('jobpost'));
     }
 
     /**

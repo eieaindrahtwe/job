@@ -18,7 +18,7 @@
         <div class="tile">
           <div class="tile-body">
             <h4 class="d-inline-block">Companies List</h4>
-            <a href="{{route('jobcategory.create')}}" class="btn btn-success float-right">Add New</a>
+            <a href="{{route('company.create')}}" class="btn btn-success float-right">Add New</a>
 
             <div class="table-responsive mt-3">
               <table class="table table-bordered" id="sampleTable">
@@ -32,14 +32,14 @@
                 </thead>
                 <tbody>
                   @php $i=1; @endphp
-                  @foreach($jobpost as $jobpost)
+                  @foreach($companies as $company)
                   <tr>
                     <td> {{$i++}} </td>
-                    <td> {{$jobpost->name}}</td>
+                    <td> {{$company->jobpost->company_name}}</td>
                     <td> <img src="{{asset($company_logo->photo)}}" width="100"> </td>
                     <td>
-                      <a href="{{route('jobpost.edit',$jobpost->id)}}" class="btn btn-warning btn-sm">Edit</a>
-                      <form method="post" action="{{route('jobpost.destroy',$jobpost->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+                      <a href="{{route('company.edit',$company->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                      <form method="post" action="{{route('company.destroy',$company->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                         @csrf
                         @method('DELETE')
                         <input type="submit" name="btnsubmit" class="btn btn-danger btn-sm" value="Delete">

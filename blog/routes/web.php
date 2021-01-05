@@ -20,10 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontendController@index')->name('homepage');
 
 
-
-
-
-
 //backend
 
 Route::get('dashboard', 'BackendController@dashboard')->name('dashboardpage');
@@ -33,4 +29,6 @@ Route::resource('jobcategory', 'JobCategoryController');
 Route::resource('jobsubcategory', 'JobsubcategoryController');
 
 Route::resource('jobpost', 'JobpostController');
+
+Route::resource('company', 'CompanyController');
 

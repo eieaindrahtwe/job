@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                   @php $i=1; @endphp
-                  @foreach($jobposts as $jobpost)
+                  @foreach($jobpost as $jobpost)
                   <tr>
                     <td> {{$i++}} </td>
                     <td> <img src="{{asset($job_photo->photo)}}" width="100"> </td>
@@ -52,14 +52,14 @@
                     <td> {{$jobpost->company_description}}</td>
                     <td> {{$jobpost->website}}</td>
 
-                     {{-- <td>
+                     <td>
                       <a href="{{route('jobpost.edit',$jobpost->id)}}" class="btn btn-primary btn-sm">Detail</a>
                       <form method="post" action="{{route('jobpost.destroy',$jobpost->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                         @csrf
                         @method('DELETE')
                         <input type="submit" name="btnsubmit" class="btn btn-danger btn-sm" value="Delete">
                       </form>
-                    </td> --}}
+                    </td>
                   </tr>
                 @endforeach
                 </tbody>

@@ -14,7 +14,7 @@ class JobCategoryController extends Controller
      */
     public function index()
     {
-        $jobcategories = jobcategory::all();
+        $jobcategories = jobcategory::orderBy('id','desc')->get();
         return view('backend.categories.index',compact('jobcategories'));
     }
 

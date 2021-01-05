@@ -8,6 +8,9 @@ class company extends Model
 {
     //
     protected $fillable = [
-        'company_logo',
+        'company_logo','jobpost_id',
     ];
+    public function jobpost(){
+    	return $this->belongsTo('App\jobpost');
+    }
 }

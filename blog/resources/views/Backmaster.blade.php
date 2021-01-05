@@ -157,6 +157,13 @@
                     <span>Job Post</span></a>
             </li>
 
+            <!-- Nav Item - Company -->
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('company*') ? 'active' : '' }}" href="{{route('company.index')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Company</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
