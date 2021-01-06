@@ -37,9 +37,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @php $i=1; @endphp
-                  @foreach($jobpost as $jobpost)
-                  <tr>
+                 {{--  @php $i=1; @endphp
+                  @foreach($jobpost as $jobpost) --}}
+                  {{-- <tr>
                     <td> {{$i++}} </td>
                     <td> <img src="{{asset($job_photo->photo)}}" width="100"> </td>
                     <td> {{$jobpost->email}}</td>
@@ -58,10 +58,10 @@
                         @csrf
                         @method('DELETE')
                         <input type="submit" name="btnsubmit" class="btn btn-danger btn-sm" value="Delete">
-                      </form>
-                    </td>
+                      </form> --}}
+                   {{--  </td>
                   </tr>
-                @endforeach
+                @endforeach --}}
                 </tbody>
               </table>
             </div>

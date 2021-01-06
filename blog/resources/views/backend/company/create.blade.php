@@ -27,13 +27,13 @@
                   <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
               </div>
-              {{-- <div class="form-group">
+              <div class="form-group">
                 <label for="fileInput">Logo:</label>
                 <input type="file" name="logo" class="form-control-file @error('logo') is-invalid @enderror" id="fileInput">
                 @error('logo')
                   <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-              </div> --}}
+              </div>
               <div class="form-group">
                 <input type="submit" name="btn-submit" value="Save" class="btn btn-primary">
               </div>

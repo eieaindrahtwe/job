@@ -26,7 +26,7 @@
                   <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Logo</th>
+                    {{-- <th>Logo</th> --}}
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -36,7 +36,7 @@
                   <tr>
                     <td> {{$i++}} </td>
                     <td> {{$jobcategory->name}}</td>
-                    <td> <img src="{{asset($jobcategory->logo)}}" width="100"> </td>
+                    {{-- <td> <img src="{{asset($jobcategory->logo)}}" width="100"> </td> --}}
                     <td>
                       <a href="{{route('jobcategory.edit',$jobcategory->id)}}" class="btn btn-warning btn-sm">Edit</a>
                       <form method="post" action="{{route('jobcategory.destroy',$jobcategory->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">

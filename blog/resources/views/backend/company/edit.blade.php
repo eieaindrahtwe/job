@@ -28,7 +28,7 @@
                   <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
               </div>
-              {{-- <div class="form-group">
+              <div class="form-group">
                 <label for="fileInput">Logo:</label>
 
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -51,7 +51,7 @@
                     @enderror
                   </div>
                 </div>
-              </div> --}}
+              </div>
               <div class="form-group">
                 <input type="submit" name="btn-submit" value="Update" class="btn btn-primary">
               </div>

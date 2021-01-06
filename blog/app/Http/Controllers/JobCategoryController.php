@@ -37,30 +37,30 @@ class JobCategoryController extends Controller
     public function store(Request $request)
     {
         //
-        //dd($request);
+        dd($request);
 
         //validation
         $request->validate([
-            'name' => 'required|min:5',
-            'logo' => 'required|mimes:jpeg,jpg,png'
+            'name' => 'required|min:0',
+            // 'logo' => 'required|mimes:jpeg,jpg,png'
         ]);
 
-        // upload
-        if($request->file()) {
-            // 624872374523_a.jpg
-            $fileName = time().'_'.$request->logo->getClientOriginalName();
+        // // upload
+        // if($request->file()) {
+        //     // 624872374523_a.jpg
+        //     $fileName = time().'_'.$request->logo->getClientOriginalName();
 
-            // categoryimg/624872374523_a.jpg
-            $filePath = $request->file('logo')->storeAs('jobcategoryimg', $fileName, 'public');
+        //     // categoryimg/624872374523_a.jpg
+        //     $filePath = $request->file('logo')->storeAs('jobcategoryimg', $fileName, 'public');
 
-             $path = '/storage/'.$filePath;
-        }
+        //      $path = '/storage/'.$filePath;
+        // }
 
 
         // store data
         $jobcategory = new jobcategory;
         $jobcategory->name = $request->name;
-        $jobcategory->logo = $path;
+        // $jobcategory->logo = $path;
         $jobcategory->save();
 
         //redirect
@@ -101,36 +101,36 @@ class JobCategoryController extends Controller
      */
     public function update(Request $request, jobcategory $jobcategory)
     {
-        //
+        //dd($request);
         $request->validate([
-            'name' => 'required|min:5',
-            'logo' => 'sometimes|mimes:jpeg,jpg,png'
+            'name' => 'required|min:0',
+            // 'logo' => 'sometimes|mimes:jpeg,jpg,png'
         ]);
 
-        // upload
-        if($request->file()) {
-            // 624872374523_a.jpg
-            $fileName = time().'_'.$request->logo->getClientOriginalName();
+        // // upload
+        // if($request->file()) {
+        //     // 624872374523_a.jpg
+        //     $fileName = time().'_'.$request->logo->getClientOriginalName();
 
-            // categoryimg/624872374523_a.jpg
-            $filePath = $request->file('logo')->storeAs('jobcategoryimg', $fileName, 'public');
+        //     // categoryimg/624872374523_a.jpg
+        //     $filePath = $request->file('logo')->storeAs('jobcategoryimg', $fileName, 'public');
 
-            $path = '/storage/'.$filePath;
+        //     $path = '/storage/'.$filePath;
 
-            // delete old image
+        //     // delete old image
 
 
-            // $category->logo = $path;
+        //     // $category->logo = $path;
 
-        }
-        else {
-           $path=$request->oldlogo;
-        }
+        // }
+        // else {
+        //    $path=$request->oldlogo;
+        // }
 
         //$jobcategory=jobcategory::find($id);
         // update data
         $jobcategory->name = $request->name;
-        $jobcategory->logo = $path;
+        // $jobcategory->logo = $path;
         $jobcategory->save();
 
         // redirect

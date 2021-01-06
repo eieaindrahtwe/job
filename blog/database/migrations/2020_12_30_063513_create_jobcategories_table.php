@@ -16,7 +16,6 @@ class CreateJobcategoriesTable extends Migration
         Schema::create('jobcategories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('logo');
             $table->timestamps();
         });
     }

@@ -43,7 +43,7 @@ class JobsubcategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:5',
+            'name' => 'required|min:0',
             'jobcategory' => 'required'
 
         ]);
@@ -79,8 +79,8 @@ class JobsubcategoryController extends Controller
     {
         //
         $jobsubcategories = jobsubcategory::find($id);
-        $jobcategory = jobcategory::all();
-        return view('backend.subcategories.edit',compact('jobsubcategories','jobcategory'));
+        $jobcategories = jobcategory::all();
+        return view('backend.subcategories.edit',compact('jobsubcategories','jobcategories'));
 
     }
 
@@ -95,11 +95,11 @@ class JobsubcategoryController extends Controller
     {
         //
         $request->validate([
-            'name' => 'required|min:5',
+            'name' => 'required|min:0',
             'jobcategory' => 'required'
 
         ]);
-         //$jobsubcategory=jobsubcategory::find($id);
+         $jobsubcategory=jobsubcategory::find($id);
         // $subcategory = new Subcategory;
 
         $jobsubcategory->name = $request->name;

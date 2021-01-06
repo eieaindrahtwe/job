@@ -12,6 +12,6 @@ class jobsubcategory extends Model
     ];
 
     public function jobcategory(){
-    	return $this->belongsTo('App\Jobcategory');
+    	return $this->belongsTo('App\jobcategory');
     }
 }
